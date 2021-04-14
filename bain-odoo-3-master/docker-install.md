@@ -1,0 +1,1 @@
+docker run --name odoo-new --network host --privileged -v /sys/fs/cgroup:/sys/fs/cgroup -v /usr/bin/systemctl:/usr/bin/systemctl -v /run/systemd/system:/run/systemd/system -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket -itd ubuntu:18.04 bash

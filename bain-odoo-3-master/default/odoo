@@ -1,0 +1,10 @@
+export OE_VERSION=14.0
+export OE_USER=odoo-admin
+export OE_ADMINPASSWD=odoo-admin
+export OS_DB_PASSWORD=odoo-admin
+export OE_DB_HOST=odoo-db
+export OE_DOMAIN=odoo.fago-labs.com
+export WKHTMLTOX=https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.bionic_amd64.deb
+export LANG='en_US.UTF-8'
+export LANGUAGE='en_US:en'
+export LC_ALL='en_US.UTF-8'
