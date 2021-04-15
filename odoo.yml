@@ -1,7 +1,7 @@
 version: '2'
 services:
   odoo-web:
-    image: ubuntu:18.04
+    image: thaihust/odoo-from-source:14.0
     container_name: odoo-web
     links:
       - odoo-db:db
@@ -9,12 +9,8 @@ services:
       - odoo-db
     ports:
       - "8069:8069"
-      - "80:80"
-      - "443:443"
     volumes:
-      - ./odoo-web-data:/var/lib/odoo
-      - ./config:/etc/odoo
-      - ./addons:/mnt/extra-addons
+      - ./config/odoo.conf:/etc/odoo.conf
     stdin_open: true
     tty: true
   odoo-db:
