@@ -2,6 +2,7 @@ FROM ubuntu:18.04
 
 #odoo env
 ENV OE_VERSION=14.0
+ENV OE_REPO=https://www.github.com/odoo/odoo
 ENV OE_USER=odoo-admin
 ENV OE_ADMINPASSWD=odoo-admin
 ENV OS_DB_PASSWORD=odoo-admin
@@ -42,7 +43,7 @@ RUN sed -i "s|OE_DOMAIN|$OE_DOMAIN|g" /etc/nginx/conf.d/odoo.conf \
     && apt-get install -y ./`basename $WKHTMLTOX` \
     && apt-get install -y locales && locale-gen en_US.UTF-8 \
     && chown root:root /opt/$OE_USER \
-    && git clone https://www.github.com/odoo/odoo --depth 1 --branch $OE_VERSION /opt/$OE_USER/odoo \
+    && git clone $OE_REPO --depth 1 --branch $OE_VERSION /opt/$OE_USER/odoo \
     && cd /opt/$OE_USER \
     && python3 -m venv odoo-venv \
     && . odoo-venv/bin/activate \
